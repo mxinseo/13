@@ -1,30 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-struct point{
-	int x;
-	int y;
+struct student{
+	int ID;
+	char name[10];
+	double grade;
 };
 
 int main(int argc, char *argv[]) {
-	struct point p1, p2;
-	int xdiff, ydiff;
-	double dist;
+	struct student s1 = {1, "minseo", 4.3};
 	
-	printf("input p1 coordinate (x y) : ");
-	scanf("%d %d", &p1.x, &p1.y);
-
-	printf("input p2 coordinate (x y) : ");
-	scanf("%d %d", &p2.x, &p2.y);
+	s1.ID = 123456;
+	strcpy(s1.name, "Juyeop");
+	s1.grade = 4.2; 
 	
-	xdiff = p2.x - p1.x;
-	ydiff = p2.y - p1.y;
-	dist = sqrt(xdiff * xdiff + ydiff * ydiff);
-	
-	printf("distance : %lf", dist);
-	
+	printf("ID : %d\nname: %s\ngrade: %lf", s1.ID, s1.name, s1.grade);
 	return 0;
 }
